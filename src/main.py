@@ -2,7 +2,7 @@ import os
 import sys
 import shutil
 import re
-from textnode import TextNode, TextType, markdown_to_html_node, markdown_to_blocks, block_to_block_type, BlockType
+from textnode import markdown_to_html_node, markdown_to_blocks, block_to_block_type, BlockType
 
 
 def copy_directory(source, destination):
@@ -103,9 +103,6 @@ def generate_pages_recursive(dir_path_content, template_path, dest_dir_path, bas
 def main():
     # Get basepath from CLI argument, default to "/"
     basepath = sys.argv[1] if len(sys.argv) > 1 else "/"
-
-    node = TextNode("Hello, World!", TextType.TEXT)
-    print(node)
     print(f"Building site with basepath: {basepath}")
 
     # Copy static files to docs directory
